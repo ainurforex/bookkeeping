@@ -2,7 +2,7 @@ public class Bookkeeping {
     public static void main(String[] args) {
         Employee[] employeeBase = new Employee[10];
         employeeBase[0] = new Employee("Петров", "Иван", "Сидорович", 1, 12000);
-        employeeBase[1] = new Employee("Нечаев", "Петр", "Васильевич", 1, 13000);
+        employeeBase[8] = new Employee("Нечаев", "Петр", "Васильевич", 1, 13000);
         employeeBase[2] = new Employee("Сидоров", "Василий", "Петрович", 1, 14000);
         employeeBase[3] = new Employee("Бекетова", "Анна", "Васильевнв", 2, 15000);
         employeeBase[4] = new Employee("Зарев", "Михаил", "Артурович", 2, 21000);
@@ -72,11 +72,11 @@ public class Bookkeeping {
         if (isEmptyBase(employees)) {
             return "None";
         }
-
-        int minSalary = employees[0].getSalary();
+        int firstEnterInBase = firstEnterInBase(employees);
+        int minSalary = employees[firstEnterInBase].getSalary();
         int indexEmployeesMinSalary = 0;
 
-        for (int i = 1; i < employees.length; i++) {
+        for (int i = firstEnterInBase; i < employees.length; i++) {
             if (employees[i] != null) {
                 if (employees[i].getSalary() < minSalary) {
                     minSalary = employees[i].getSalary();
@@ -92,11 +92,11 @@ public class Bookkeeping {
         if (isEmptyBase(employees)) {
             return "None";
         }
-
-        int maxSalary = employees[0].getSalary();
+        int firstEnterInBase = firstEnterInBase(employees);
+        int maxSalary = employees[firstEnterInBase].getSalary();
         int indexEmployeesMaxSalary = 0;
 
-        for (int i = 1; i < employees.length; i++) {
+        for (int i = firstEnterInBase; i < employees.length; i++) {
             if (employees[i] != null) {
                 if (employees[i].getSalary() > maxSalary) {
                     maxSalary = employees[i].getSalary();
@@ -139,5 +139,15 @@ public class Bookkeeping {
         }
     }
 
+    private static int firstEnterInBase(Employee[] employees) {
+
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 
 }
