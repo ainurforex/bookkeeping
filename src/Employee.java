@@ -8,6 +8,13 @@ public class Employee {
     private int salary;
 
     public Employee(String surname, String name, String middleName, int department, int salary) {
+        if (department < 1) {
+            throw new IllegalArgumentException("Департамент не может быть отрицательным числом.");
+        }
+        if (salary < 0) {
+            throw new IllegalArgumentException("Зарплата не может быть отрицательным числом.");
+        }
+
         this.id = idIncrease();
         this.department = department;
         this.surname = surname;

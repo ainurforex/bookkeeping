@@ -1,14 +1,14 @@
 public class Bookkeeping {
     public static void main(String[] args) {
         Employee[] employeeBase = new Employee[10];
-        employeeBase[0] = new Employee("Петров", "Иван", "Сидорович", 1, 12000);
-        employeeBase[1] = new Employee("Нечаев", "Петр", "Васильевич", 1, 13000);
-        employeeBase[2] = new Employee("Сидоров", "Василий", "Петрович", 1, 14000);
-        employeeBase[3] = new Employee("Бекетова", "Анна", "Васильевнв", 2, 15000);
-        employeeBase[8] = new Employee("Зарев", "Михаил", "Артурович", 2, 21000);
-        employeeBase[5] = new Employee("Пушкин", "Александр", "Сергеевич", 3, 22000);
-        employeeBase[6] = new Employee("Сиськин", "Гиви", "Карэнович", 3, 23000);
-        employeeBase[7] = new Employee("Могелева", "Кристина", "Андреевна", 4, 24000);
+        employeeBase[0] = new Employee("Петров", "Иван", "Сидорович", 1, 1000);
+        employeeBase[1] = new Employee("Нечаев", "Петр", "Васильевич", 1, 2000);
+        employeeBase[2] = new Employee("Сидоров", "Василий", "Петрович", 1, 3000);
+        employeeBase[3] = new Employee("Бекетова", "Анна", "Васильевнв", 2, 50000);
+        employeeBase[8] = new Employee("Зарев", "Михаил", "Артурович", 2, 8000);
+        employeeBase[5] = new Employee("Пушкин", "Александр", "Сергеевич", 3, 70000);
+        employeeBase[6] = new Employee("Сиськин", "Гиви", "Карэнович", 3, 75000);
+        employeeBase[7] = new Employee("Могелева", "Кристина", "Андреевна", 4, 25000);
 
         System.out.println(dataOfEmployees(employeeBase));
         System.out.println(summSalary(employeeBase));
@@ -136,7 +136,7 @@ public class Bookkeeping {
                 return i;
             }
         }
-        System.out.println("Нет Данных.");
+        System.out.println("Запись в базе отсутствует.");
         return -1;
     }
 
